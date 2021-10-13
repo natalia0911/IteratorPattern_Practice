@@ -9,13 +9,15 @@ package iterator_practice;
  *
  * @author Natalia
  */
-public class Por_Columna implements IIterator<Por_Columna>{
+public class Por_Columna implements IIterator<Integer>{
 
     private int column;
-    private Estructure matrix;
+    private int row;
+    private int matrix[][];
 
     public Por_Columna(Estructure matrix) {
-        this.matrix = matrix;
+        this.matrix = matrix.getMatriz();
+        this.row = 0;
     }
 
     public int getColumn() {
@@ -28,12 +30,19 @@ public class Por_Columna implements IIterator<Por_Columna>{
     
     @Override
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        if (this.row <= this.matrix.length-1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
-    public Por_Columna next() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Integer next() {
+        int value = this.matrix[this.row][this.column];
+        this.row = row+1;
+        return value;
     }
 
  

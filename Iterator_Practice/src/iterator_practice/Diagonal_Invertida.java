@@ -11,25 +11,32 @@ package iterator_practice;
  */
 public class Diagonal_Invertida implements IIterator<Integer>{
     
-    private Estructure matrix;
-    int i = 0;
-    int j = 0;
+    private int matrix[][];
+    private int i;
+    private int j;
 
     public Diagonal_Invertida(Estructure matrix) {
-        this.matrix = matrix;
-        i = matrix.getDimesion() - 1 ;
+        this.matrix = matrix.getMatriz();
+        this.i = 0;
+        this.j = matrix.getDimesion()-1;
     }
     
     @Override
     public boolean hasNext() {
-        return ( i>=0  )? true:false;
+        if (this.i<= this.matrix.length-1 && this.j >= 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public Integer next() {
-        int data = matrix.get(i, i);
-        i--;
-        return data;
+        int value = this.matrix[i][j];
+        this.i = i+1;
+        this.j = j-1;
+        return value;
     }
     
 }

@@ -21,6 +21,17 @@ public class Iterator_Practice {
         IIterator it = ed.getIterator(EnumIterator.COLUMNAS_POR_FILAS);
         while (it.hasNext()){
             System.out.println(it.next());
+        //ed.printMatrix();
+        /*
+        IIterator i = ed.getIterator(EnumIterator.DIAGONAL_INVERTIDA);
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+        */
+        Por_Fila i = (Por_Fila) ed.getIterator(EnumIterator.POR_FILA);
+        i.setRow(2);
+        while(i.hasNext()){
+            System.out.println(i.next());
         }
     }
     
