@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,36 +7,34 @@ package iterator_practice;
 
 /**
  *
- * @author Natalia
+ * @author lalem
  */
-public class Filas_Pares implements IIterator<Integer>{
-    
-    private Estructure matrix;
+public class FilasXColumnas implements IIterator<Integer>{
+        private Estructure matrix;
     private int i;
     private int j;
-    
-    public Filas_Pares(Estructure matrix) {
+
+
+    public FilasXColumnas(Estructure matrix) {
         this.matrix = matrix;
         i = 0;
         j = 0;
     }
-    
+
     @Override
     public boolean hasNext() {
-       int dim = matrix.getDimesion();
-        return ( (i > dim && j >= dim) ||  i >= dim)? false:true;
+        return (j >= matrix.getDimesion() && j >= matrix.getDimesion())? false:true;
     }
 
     @Override
     public Integer next() {
-     
+        
         int data =  matrix.get(i, j);
-        j++;
-        if(j == matrix.getDimesion()){
-            j = 0;
-            i += 2;
+        i++;
+        if(i == matrix.getDimesion()){
+            i = 0;
+            j++;
         }
         return data;
     }
-    
 }

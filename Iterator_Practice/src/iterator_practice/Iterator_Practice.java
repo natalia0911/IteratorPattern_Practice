@@ -18,6 +18,10 @@ public class Iterator_Practice {
         Estructure ed = new Estructure(5);
         ed.constructMatrix();
         ed.printMatrix();
+        IIterator it = ed.getIterator(EnumIterator.COLUMNAS_POR_FILAS);
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
     }
     
 }

@@ -50,4 +50,7 @@ public class Estructure implements Aggregate<Estructure>{
         return IteratorFactory.getIterator(ed, this);
     }
     
+    public int get(int linea, int columna){
+        return matriz[linea][columna];
+    }
 }

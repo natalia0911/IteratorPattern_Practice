@@ -9,22 +9,33 @@ package iterator_practice;
  *
  * @author Natalia
  */
-public class Columnas_Impares implements IIterator<Columnas_Impares>{
+public class Columnas_Impares implements IIterator<Integer>{
 
     private Estructure matrix;
+    private int i;
+    private int j;
 
     public Columnas_Impares(Estructure matrix) {
         this.matrix = matrix;
+         i = 0;
+         j = 1;
     }
     
     @Override
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        int dim = matrix.getDimesion();
+        return ( (i > dim && j >= dim) ||  j >= dim)? false:true;
     }
 
     @Override
-    public Columnas_Impares next() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public Integer next() { 
+        int data =  matrix.get(i, j);
+        i++;
+        if(i == matrix.getDimesion()){
+            i = 0 ;
+            j+=2;
+        }
+        return data;
     }
     
 }

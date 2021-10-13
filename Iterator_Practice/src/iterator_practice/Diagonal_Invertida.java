@@ -9,22 +9,27 @@ package iterator_practice;
  *
  * @author Natalia
  */
-public class Diagonal_Invertida implements IIterator<Diagonal_Invertida>{
+public class Diagonal_Invertida implements IIterator<Integer>{
     
     private Estructure matrix;
+    int i = 0;
+    int j = 0;
 
     public Diagonal_Invertida(Estructure matrix) {
         this.matrix = matrix;
+        i = matrix.getDimesion() - 1 ;
     }
     
     @Override
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        return ( i>=0  )? true:false;
     }
 
     @Override
-    public Diagonal_Invertida next() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Integer next() {
+        int data = matrix.get(i, i);
+        i--;
+        return data;
     }
     
 }

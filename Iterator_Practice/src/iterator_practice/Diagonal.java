@@ -9,9 +9,10 @@ package iterator_practice;
  *
  * @author Natalia
  */
-public class Diagonal implements IIterator<Diagonal>{
+public class Diagonal implements IIterator<Integer>{
 
     private Estructure matrix;
+    int i = 0;
 
     public Diagonal(Estructure matrix) {
         this.matrix = matrix;
@@ -19,12 +20,14 @@ public class Diagonal implements IIterator<Diagonal>{
     
     @Override
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+       return (matrix.getDimesion() > i )? true:false;
     }
 
     @Override
-    public Diagonal next() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+    public Integer next() {
+        int data = matrix.get(i, i);
+        i++;
+        return data;
     }
     
 }

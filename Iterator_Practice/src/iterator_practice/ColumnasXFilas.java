@@ -7,36 +7,38 @@ package iterator_practice;
 
 /**
  *
- * @author Natalia
+ * @author lalem
  */
-public class Filas_Pares implements IIterator<Integer>{
-    
+public class ColumnasXFilas implements IIterator<Integer>{
+
     private Estructure matrix;
     private int i;
     private int j;
-    
-    public Filas_Pares(Estructure matrix) {
+
+
+    public ColumnasXFilas(Estructure matrix) {
         this.matrix = matrix;
         i = 0;
         j = 0;
     }
-    
+
     @Override
     public boolean hasNext() {
-       int dim = matrix.getDimesion();
-        return ( (i > dim && j >= dim) ||  i >= dim)? false:true;
+        return (i >= matrix.getDimesion())? false:true;
     }
 
     @Override
     public Integer next() {
-     
+        
         int data =  matrix.get(i, j);
         j++;
         if(j == matrix.getDimesion()){
-            j = 0;
-            i += 2;
+            j = 0 ;
+            i++;
         }
         return data;
     }
+
+
     
 }

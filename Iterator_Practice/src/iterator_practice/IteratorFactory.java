@@ -31,6 +31,10 @@ public class IteratorFactory {
                 return new Columnas_Pares(ed);
             case COLUMNAS_IMPARES:
                 return new Columnas_Impares(ed);
+            case COLUMNAS_POR_FILAS:
+                return new ColumnasXFilas(ed);
+            case FILAS_POR_COLUMNAS:
+                return new FilasXColumnas(ed);
             default:  
                 throw new IllegalArgumentException("EnumIterator do not exist");
         }
