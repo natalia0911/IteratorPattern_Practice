@@ -17,7 +17,18 @@ public class Iterator_Practice {
     public static void main(String[] args) {
         Estructure ed = new Estructure(5);
         ed.constructMatrix();
-        ed.printMatrix();
+        //ed.printMatrix();
+        /*
+        IIterator i = ed.getIterator(EnumIterator.DIAGONAL_INVERTIDA);
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
+        */
+        Por_Fila i = (Por_Fila) ed.getIterator(EnumIterator.POR_FILA);
+        i.setRow(2);
+        while(i.hasNext()){
+            System.out.println(i.next());
+        }
     }
     
 }

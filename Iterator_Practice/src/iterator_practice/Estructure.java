@@ -44,6 +44,11 @@ public class Estructure implements Aggregate<Estructure>{
             System.out.println(fila);
         }
     }
+
+    public int[][] getMatriz() {
+        return matriz;
+    }
+    
     
     @Override
     public IIterator getIterator(EnumIterator ed) {

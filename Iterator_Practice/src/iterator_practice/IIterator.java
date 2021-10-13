@@ -7,5 +7,5 @@ package iterator_practice;
 
 public interface IIterator<T> {       
     public  boolean hasNext();       
-    public T next();   
+    public Object next();   
 }
